@@ -4,7 +4,7 @@ import hashlib
 import asyncio
 import aiohttp
 
-class ftxapi:
+class bybitapi:
     def __init__(self):
         self.apikey = ""
         self.apisecret = ""
@@ -64,5 +64,5 @@ class ftxapi:
     
     
 if __name__ == "__main__":
-    ftxo = ftxapi()
-    ftxo.test()
+    bb = bybitapi()
+    bb.test()
