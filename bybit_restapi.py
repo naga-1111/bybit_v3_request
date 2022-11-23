@@ -9,7 +9,10 @@ class bybitapi:
         self.apikey = ""
         self.apisecret = ""
         self.bybit_endpoint_url = "https://api.bybit.com"
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())    #windowsの時はこれがないとeventlooperror
+        try:
+            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())    #windowsの時はこれがないとeventlooperror
+        except AttributeError:
+            pass
         return
 
     async def HTTP_Request(self, endpoint, method, payload):
